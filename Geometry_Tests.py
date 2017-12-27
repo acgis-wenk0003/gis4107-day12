@@ -60,9 +60,13 @@ def test_lines():
 def test_polylines():
     test_seg_1=geo.Line('6,6','9,9')
     test_seg_2=geo.Line('9,9','10,10')
+    test_seg_3= '6,3','6,6'
     test_poly=geo.Polyline()
+    test_poly.addSegment(test_seg_1)
+    test_poly.addSegment(test_seg_2)
+    test_poly.addSegment(test_seg_3)
     desc="Test of the Polyline Class."
-    expected= 27
+    expected= 5.65685
     actual=test_poly.length()
     print_test_results(test_polylines,desc,expected,actual)
 

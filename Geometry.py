@@ -38,16 +38,22 @@ class Line(object):
 class Polyline(object):
     def __init__(self):
         self.__segments=[]
-        self.__length=0.0
+        self.__length=float()
 
     def addSegment(self,segment):
         if type(segment) is Line:
-            self.segments=[segment]
-            print self.segments
+            Llength=segment.length()
+            self.__segments.append(Llength)
 
+        else:
+            print "Incorrect Type must be Line."
 
     def length(self):
-        pass
+        total_length=float()
+        for segmen in self.__segments:
+            total_length+=segmen
+        self.__length=total_length
+        return round(total_length,5)
 
 
 

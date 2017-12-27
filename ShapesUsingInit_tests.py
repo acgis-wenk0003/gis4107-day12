@@ -11,8 +11,8 @@
 
 import sys
 import inspect
-import Geometry as geo
-
+import ShapesUsingInit as shapesU
+reload(shapesU)
 # Add import statement for the module under test as follows:
 # import module_under_test as alias
 
@@ -43,29 +43,30 @@ def template_for_test_functions():
 
 # Create test functions here using the template_for_test_functions above.
 # The name of the test functions needs to begin with "test"
-def test_points():
-    test_point=geo.Point(6,9)
-    desc="Test of the Point Class"
-    expected="6.0"
-    actual=test_point.x
-    print_test_results(test_points,desc,expected,actual)
+def test_shapes_c():
+    shape_circle_test=shapesU.Circle(2.5)
+    desc = "Test of the Circle class using Init property"
+    expected = 19.63495
+    actual = shape_circle_test.area()
+    print_test_results(test_shapes_c, desc, expected, actual)
+    print str(shape_circle_test)
 
-def test_lines():
-    test_line=geo.Line('6,6','18,18')
-    desc="Test of the Line Class"
-    expected=16.97056
-    actual=test_line.length()
-    print_test_results(test_lines,desc,expected,actual)
+def test_shapes_s():
+    shape_square_test=shapesU.Square(2.0)
+    shape_square_test.side=2.0
+    desc = "Test of the Square class using Init."
+    expected = 4.0
+    actual = shape_square_test.area()
+    print_test_results(test_shapes_s, desc, expected, actual)
+    print str(shape_square_test)
 
-def test_polylines():
-    test_seg_1=geo.Line('6,6','9,9')
-    test_seg_2=geo.Line('9,9','10,10')
-    test_poly=geo.Polyline()
-    desc="Test of the Polyline Class."
-    expected= 27
-    actual=test_poly.length()
-    print_test_results(test_polylines,desc,expected,actual)
-
+def test_shapes_r():
+    shape_rectangle_test=shapesU.Rectangle(2.0,4.0)
+    desc = "Test of the Rectangle class using Init."
+    expected = 8.0
+    actual = shape_rectangle_test.area()
+    print_test_results(test_shapes_r, desc, expected, actual)
+    print str(shape_rectangle_test)
 # ------------------------------------------------------------------------------
 # Test template helper functions.  Code in this section should not need to
 # modified.

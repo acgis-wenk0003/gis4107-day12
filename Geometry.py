@@ -37,6 +37,17 @@ class Line(object):
 #need to complete polyline
 class Polyline(object):
     def __init__(self):
+        self.__segments=[]
+        self.__length=0.0
+
+    def addSegment(self,segment):
+        if type(segment) is Line:
+            self.segments=[segment]
+            print self.segments
+
+
+    def length(self):
+        pass
 
 
 

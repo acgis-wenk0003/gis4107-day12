@@ -24,16 +24,8 @@ def func(params):
     pass
 #returns object id instead of value in the __str__ def for all shapes
 class Circle(object):
-    @property
-    def radius(self):
-        return self.__radius
-
-    @radius.setter
-    def radius(self,radius):
+    def __init__(self,radius):
         self.__radius=radius
-    @property
-    def area(self):
-        return self.area
 
 
     def area(self):
@@ -46,17 +38,11 @@ class Circle(object):
         return "Circle area with a radius of "+str(self.__radius)+" is "+str(self.area)
 
 class Square(object):
-
-    @property
-    def side(self):
-        return self.__side
-
-    @side.setter
-    def side(self,side):
+    def __init__(self,side):
         self.__side=side
-    @property
-    def area(self):
-        return self.area
+        self.area
+
+
 
     def area(self):
         area_of_the_square= self.__side**2
@@ -68,21 +54,10 @@ class Square(object):
 #onto the rectangle issue
 
 class Rectangle(object):
-    @property
-    def width(self):
-        return self.__width
-    @width.setter
-    def width(self,width):
+    def __init__ (self,width,height):
         self.__width=width
-    @property
-    def height(self):
-        return self.__height
-    @height.setter
-    def height(self,height):
         self.__height=height
-    @property
-    def area(self):
-        return self.area
+        self.area
 
     def area(self):
         Area_of_the_rect= self.__width * self.__height
